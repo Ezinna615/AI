@@ -4,6 +4,7 @@
 #resources: https://www.youtube.com/watch?v=jRAAaDll34Q
 
 import hashlib
+import getpass
 
 # Function to hash the password with a salt
 def hash_password(password, salt):
@@ -13,8 +14,8 @@ def hash_password(password, salt):
     hashed_password = hashlib.sha256(salted_password).hexdigest()
     return hashed_password
 
-# Prompt the user to enter a password
-password = input("Enter your password: ")
+# Prompt the user to enter a password (without showing the characters)
+password = getpass.getpass("Enter your password: ")
 
 # Generate a random salt (you might want to use a different method to generate a salt)
 salt = "random_salt"  # Replace "random_salt" with your actual salt
